@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="style.css">
+    <title>Mijn Website</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">Alles Over Mij</h1>
+                    <p>
+                        Mijn naam is Thibault Coussement <br>
+                        ik ben geboren op 03/07/2002 in Oostende<br>
+                        ik ben vooral een persoon die heel geinteresseerd is in nieuwe dingen leren en uitdagingen aan te gaan. 
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Studies')">Studies</p>
+                        <p class="tab-links" onclick="opentab('Hobbys')">Hobby's</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>App Development</span><br>Apps Maken</li>
+                            <li><span>Web Development</span><br>Websites Maken</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Studies">
+                        <ul>
+                            <li><span>Houtbewerking BSO</span><br>Ik heb dit gevolgd in VTI Brugge</li>
+                            <li><span>Graduaat Programmeren</span><br>Huidige School</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Hobbys">
+                        <ul>
+                            <li><span>Fitness</span><br>Vooral voor Scoliose hierover meer.</li>
+                            <li><span>Wandelen</span><br>Met de honden en soms samen met de vriendin</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
